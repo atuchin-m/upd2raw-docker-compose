@@ -7,6 +7,8 @@ RUN git clone --branch $TAG --depth 1 https://github.com/wangyu-/udp2raw.git
 RUN cd /udp2raw && make
 
 FROM alpine:${ALPINE_VER}
-RUN apk --no-cache add iptables
+RUN apk --no-cache add iptables libcap
 COPY --from=builder /udp2raw/udp2raw /udp2raw
+RUN setcap cap_net_raw+ep /udp2raw
+USER nobody
 ENTRYPOINT [ "/udp2raw" ]

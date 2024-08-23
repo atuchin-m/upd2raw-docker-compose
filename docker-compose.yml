@@ -4,9 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: -a -l0.0.0.0:${LOCAL_PORT} -r${REMOTE_HOST} --raw-mode udp ${EXTRA_ARGS}
+    command: -l0.0.0.0:${LOCAL_PORT} -r${REMOTE_HOST} --raw-mode udp ${EXTRA_ARGS}
     cap_add:
-      - NET_ADMIN
       - NET_RAW
 
     ports:
