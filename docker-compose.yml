@@ -1,6 +1,7 @@
 services:
   udp2raw-client:
     image: udp2raw-docker
+    restart: on-failure
     build:
       context: .
       dockerfile: Dockerfile
