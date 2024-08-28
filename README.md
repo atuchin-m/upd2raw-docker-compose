@@ -1,6 +1,12 @@
 # upd2raw-docker-compose
 A docker compose build for https://github.com/wangyu-/udp2raw tool.
 
+# Requirements
+
+* Install [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/install/);
+* Start the docker engine and check that docker commands work (e.g. `docker ps`);
+* (MacOS) Enable `Use kernel networking for UDP` (the [comment](https://github.com/haugene/docker-transmission-openvpn/issues/2723#issuecomment-2143498414))
+
 # How to use
 
 * Update `.env` file to match your config (see server mode or client mode sections);
